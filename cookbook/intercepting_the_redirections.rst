@@ -23,7 +23,7 @@ A scenario using them will look like this:
     # This allows using the profiler for this request
     Then I should receive an email
     # The redirection can then be followed manually
-     And I should be redirected
+    And I should be redirected
     # The driver uses the normal behavior again after this
 
 Bootstrapping the Interception Steps:

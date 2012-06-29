@@ -225,21 +225,21 @@ Let's write a feature to test `Wikipedia <http://www.wikipedia.org/>`_ search ab
 
     # features/search.feature
     Feature: Search
-      In order to see a word definition
-      As a website user
-      I need to be able to search for a word
+        In order to see a word definition
+        As a website user
+        I need to be able to search for a word
 
-      Scenario: Searching for a page that does exist
-        Given I am on "/wiki/Main_Page"
-        When I fill in "search" with "Behavior Driven Development"
-        And I press "searchButton"
-        Then I should see "agile software development"
+        Scenario: Searching for a page that does exist
+            Given I am on "/wiki/Main_Page"
+            When I fill in "search" with "Behavior Driven Development"
+            And I press "searchButton"
+            Then I should see "agile software development"
 
-      Scenario: Searching for a page that does NOT exist
-        Given I am on "/wiki/Main_Page"
-        When I fill in "search" with "Glory Driven Development"
-        And I press "searchButton"
-        Then I should see "Search results"
+        Scenario: Searching for a page that does NOT exist
+            Given I am on "/wiki/Main_Page"
+            When I fill in "search" with "Glory Driven Development"
+            And I press "searchButton"
+            Then I should see "Search results"
 
 We have two scenarios here:
 
@@ -306,10 +306,10 @@ through Selenium:
 .. code-block:: gherkin
 
     Scenario: Searching for a page with autocompletion
-      Given I am on "/wiki/Main_Page"
-      When I fill in "search" with "Behavior Driv"
-      And I wait for the suggestion box to appear
-      Then I should see "Behavior Driven Development"
+        Given I am on "/wiki/Main_Page"
+        When I fill in "search" with "Behavior Driv"
+        And I wait for the suggestion box to appear
+        Then I should see "Behavior Driven Development"
 
 Now, we need to tell Behat and Mink to run this scenario in different session
 (with different browser emulator). Mink comes with special :doc:`hook </guides/3.hooks>`,
@@ -321,10 +321,10 @@ our scenario:
 
     @javascript
     Scenario: Searching for a page with autocompletion
-      Given I am on "/wiki/Main_Page"
-      When I fill in "search" with "Behavior Driv"
-      And I wait for the suggestion box to appear
-      Then I should see "Behavior-driven development"
+        Given I am on "/wiki/Main_Page"
+        When I fill in "search" with "Behavior Driv"
+        And I wait for the suggestion box to appear
+        Then I should see "Behavior-driven development"
 
 Now run your feature again:
 
@@ -440,9 +440,9 @@ Voila!
 
         Feature: Some feature with insulated scenario
 
-          @javascript @insulated
-          Scenario: isolated scenario
-            #...
+            @javascript @insulated
+            Scenario: isolated scenario
+                #...
 
 Going further
 -------------

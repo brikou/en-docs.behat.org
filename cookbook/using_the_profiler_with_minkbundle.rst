@@ -9,7 +9,7 @@ Your goal here will be to implement a step like this:
 
 .. code-block:: gherkin
 
-     Then I should get an email on "stof@example.org" with:
+    Then I should get an email on "stof@example.org" with:
         """
         To finish validating your account - please visit
         """

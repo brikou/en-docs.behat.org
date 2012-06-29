@@ -12,20 +12,20 @@ A stakeholder may say to you:
 .. code-block:: gherkin
 
     Feature: ls
-      In order to see the directory structure
-      As a UNIX user
-      I need to be able to list the current directory's contents
+        In order to see the directory structure
+        As a UNIX user
+        I need to be able to list the current directory's contents
 
-      Scenario: List 2 files in a directory
-        Given I am in a directory "test"
-        And I have a file named "foo"
-        And I have a file named "bar"
-        When I run "ls"
-        Then I should get:
-          """
-          bar
-          foo
-          """
+        Scenario: List 2 files in a directory
+            Given I am in a directory "test"
+            And I have a file named "foo"
+            And I have a file named "bar"
+            When I run "ls"
+            Then I should get:
+                """
+                bar
+                foo
+                """
 
 In this tutorial, we'll show you how Behat can execute this simple story
 as a test that verifies that the ``ls`` commands works as described.
@@ -148,9 +148,9 @@ file:
 
     # features/ls.feature
     Feature: ls
-      In order to see the directory structure
-      As a UNIX user
-      I need to be able to list the current directory's contents
+        In order to see the directory structure
+        As a UNIX user
+        I need to be able to list the current directory's contents
 
 Every feature starts with this same format: a line naming the feature, followed
 by three lines that describe the benefit, the role and the feature itself.
@@ -167,15 +167,15 @@ file:
 .. code-block:: gherkin
 
     Scenario: List 2 files in a directory
-      Given I am in a directory "test"
-      And I have a file named "foo"
-      And I have a file named "bar"
-      When I run "ls"
-      Then I should get:
-        """
-        bar
-        foo
-        """
+        Given I am in a directory "test"
+        And I have a file named "foo"
+        And I have a file named "bar"
+        When I run "ls"
+        Then I should get:
+            """
+            bar
+            foo
+            """
 
 .. tip::
 
@@ -190,9 +190,9 @@ be transformed into a test. Each scenario always follows the same basic format:
 .. code-block:: gherkin
 
     Scenario: Some description of the scenario
-      Given [some context]
-      When [some event]
-      Then [outcome]
+        Given [some context]
+        When [some event]
+        Then [outcome]
 
 Each part of the scenario - the *context*, the *event*,  and the *outcome* -
 can be extended by adding the ``And`` or ``But`` keyword:
@@ -200,11 +200,11 @@ can be extended by adding the ``And`` or ``But`` keyword:
 .. code-block:: gherkin
 
     Scenario: Some description of the scenario
-      Given [some context]
+        Given [some context]
         And [more context]
-       When [some event]
+        When [some event]
         And [second event occurs]
-       Then [outcome]
+        Then [outcome]
         And [another outcome]
         But [another outcome]
 
@@ -361,17 +361,17 @@ so that you now have two scenarios defined:
 .. code-block:: gherkin
 
     Scenario: List 2 files in a directory with the -a option
-      Given I am in a directory "test"
-      And I have a file named "foo"
-      And I have a file named ".bar"
-      When I run "ls -a"
-      Then I should get:
-        """
-        .
-        ..
-        .bar
-        foo
-        """
+        Given I am in a directory "test"
+        And I have a file named "foo"
+        And I have a file named ".bar"
+        When I run "ls -a"
+        Then I should get:
+            """
+            .
+            ..
+            .bar
+            foo
+            """
 
 Run Behat again. This time, it'll run two tests, and both will pass.
 
@@ -455,8 +455,8 @@ in a format called Gherkin. Each feature file follows a few basic rules:
     .. code-block:: gherkin
 
         # language: fr
-        Fonctionnalité: ...
-          ...
+        Fonctionnalité: # ...
+            # ...
 
 You can read more about features and Gherkin language in ":doc:`/guides/1.gherkin`"
 guide.

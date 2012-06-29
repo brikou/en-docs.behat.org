@@ -107,8 +107,8 @@ including:
 .. code-block:: gherkin
 
     Given I do something with "string1"
-     When I do something with "some other string"
-     Then I do something with "smile :-)"
+    When I do something with "some other string"
+    Then I do something with "smile :-)"
 
 The only real difference between those steps in the eyes of Behat is the text
 inside double quotes. This text will be passed to its step's corresponding method
@@ -163,9 +163,9 @@ you! Let's pretend that you have this feature:
 
     # features/example.feature
     Feature:
-      Scenario:
-        Given some step with "string" argument
-        And number step with 23
+        Scenario:
+            Given some step with "string" argument
+            And number step with 23
 
 Run this feature in Behat:
 
@@ -205,9 +205,9 @@ Let's use our previously introduced feature for all the following examples:
 
     # features/example.feature
     Feature:
-      Scenario:
-        Given some step with "string" argument
-        And number step with 23
+        Scenario:
+            Given some step with "string" argument
+            And number step with 23
 
 Successful Steps
 ~~~~~~~~~~~~~~~~
@@ -605,13 +605,13 @@ Let's pretend we have written the following feature:
     # features/table.feature
     Feature: Users
 
-      Scenario: Creating Users
-        Given the following users:
-          | name          | followers |
-          | everzet       | 147       |
-          | avalanche123  | 142       |
-          | kriswallsmith | 274       |
-          | fabpot        | 962       |
+        Scenario: Creating Users
+            Given the following users:
+                | name          | followers |
+                | everzet       | 147       |
+                | avalanche123  | 142       |
+                | kriswallsmith | 274       |
+                | fabpot        | 962       |
 
 And our ``FeatureContext`` class looks like this:
 

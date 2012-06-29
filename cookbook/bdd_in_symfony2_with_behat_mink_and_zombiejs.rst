@@ -176,36 +176,36 @@ We are now testing the behavior of our model, so we are writing a feature defini
 .. code-block:: gherkin
 
     Feature: Product Category Relationship
-      In order to setup a valid catalog
-      As a developer
-      I need a working relationship
+        In order to setup a valid catalog
+        As a developer
+        I need a working relationship
 
 This being the feature, we now need the scenarios to be defined.
 
 .. code-block:: gherkin
 
     Scenario: A category contains a product
-      Given I have a category "Underwear"
+        Given I have a category "Underwear"
         And I have a product "Calvin Klein Black, 5"
-       When I add product "Calvin Klein Black, 5" to category "Underwear"
-       Then I should find product "Calvin Klein Black, 5" in category "Underwear"
+        When I add product "Calvin Klein Black, 5" to category "Underwear"
+        Then I should find product "Calvin Klein Black, 5" in category "Underwear"
     
     Scenario: A category contains more than 1 product
-      Given I have a category "Underwear"
+        Given I have a category "Underwear"
         And I have a product "Calvin Klein Black, 5"
         And I have a product "Calvin Klein White, 5"
-       When I add product "Calvin Klein Black, 5" to category "Underwear"
+        When I add product "Calvin Klein Black, 5" to category "Underwear"
         And I add product "Calvin Klein White, 5" to category "Underwear"
-       Then I should find product "Calvin Klein Black, 5" in category "Underwear"
+        Then I should find product "Calvin Klein Black, 5" in category "Underwear"
         And I should find product "Calvin Klein White, 5" in category "Underwear"
     
     Scenario: A product is part of more than 1 category
-      Given I have a product "Calvin Klein Black, 5"
+        Given I have a product "Calvin Klein Black, 5"
         And I have a category "Underwear"
         And I have a category "Men"
-       When I add product "Calvin Klein Black, 5" to category "Underwear"
+        When I add product "Calvin Klein Black, 5" to category "Underwear"
         And I add product "Calvin Klein Black, 5" to category "Men"
-       Then I should find product "Calvin Klein Black, 5" in category "Underwear"
+        Then I should find product "Calvin Klein Black, 5" in category "Underwear"
         And I should find product "Calvin Klein Black, 5" in category "Men"
 
 Well, we defined three scenarios - exactly the same we came up with before.
@@ -619,7 +619,7 @@ Let's add a background, that is clearing the database according to our scenarios
 .. code-block:: gherkin
 
     Background:
-      Given There is no "Product" in database
+        Given There is no "Product" in database
         And There is no "Category" in database
 
 Then we need to add this new step to our feature context:
@@ -793,35 +793,35 @@ The feature definition may look like this one in ``src/Acme/DemoBundle/Features/
 .. code-block:: gherkin
 
     Feature: Navigating the categories within the catalog
-      In order to view the products within the catalog
-      As a visitor
-      I want to browse the categories
+        In order to view the products within the catalog
+        As a visitor
+        I want to browse the categories
     
-      Background:
-        Given There is no "Product" in database
-          And There is no "Category" in database
-          And I have a category "Underwear"
-          And I have a category "Shoes"
+        Background:
+            Given There is no "Product" in database
+            And There is no "Category" in database
+            And I have a category "Underwear"
+            And I have a category "Shoes"
     
-      Scenario: The categories are being listed
-        Given I am on "/categories"
-         Then I should see a "ul#category-list" element
-          And I should see "Shoes" in the "#category-list" element
-          And I should see "Underwear" in the "#category-list" element
+        Scenario: The categories are being listed
+            Given I am on "/categories"
+            Then I should see a "ul#category-list" element
+            And I should see "Shoes" in the "#category-list" element
+            And I should see "Underwear" in the "#category-list" element
     
-      Scenario: The categories link to their products list
-        Given I am on "/categories"
-          And I have a product "Calvin Klein Black, 5"
-          And I add product "Calvin Klein Black, 5" to category "Underwear"
-          And I have a product "Converse All Star, 8"
-          And I add product "Converse All Star, 8" to category "Shoes"
-         When I follow "Underwear"
-         Then I should see "Calvin Klein Black, 5" in the "#product-list li" element
-          And I should not see "Converse All Star, 8"
-         When I move backward one page
-          And I follow "Shoes"
-         Then I should see "Converse All Star, 8" in the "#product-list li" element
-          And I should not see "Calvin Klein Black, 5"
+        Scenario: The categories link to their products list
+            Given I am on "/categories"
+            And I have a product "Calvin Klein Black, 5"
+            And I add product "Calvin Klein Black, 5" to category "Underwear"
+            And I have a product "Converse All Star, 8"
+            And I add product "Converse All Star, 8" to category "Shoes"
+            When I follow "Underwear"
+            Then I should see "Calvin Klein Black, 5" in the "#product-list li" element
+            And I should not see "Converse All Star, 8"
+            When I move backward one page
+            And I follow "Shoes"
+            Then I should see "Converse All Star, 8" in the "#product-list li" element
+            And I should not see "Calvin Klein Black, 5"
 
 As you can see, ``Behat`` does not care, whether we are using ``@When`` step definitions in a ``@Given`` context. 
 However, *be careful when doing this*, there might be steps that will behave differently depending on what they are meant to be!
