@@ -118,10 +118,9 @@ In ``app/autoload.php`` add these namespaces to be registered:
 
     $loader->registerNamespaces(array(
         // ...
-
-        'Behat\Gherkin' => __DIR__.'/../vendor/behat/gherkin/src',
-        'Behat\Behat' => __DIR__.'/../vendor/behat/behat/src',
-        'Behat\BehatBundle' => __DIR__.'/../vendor/bundles',
+        'Behat\\Gherkin'     => __DIR__.'/../vendor/behat/gherkin/src',
+        'Behat\\Behat'       => __DIR__.'/../vendor/behat/behat/src',
+        'Behat\\BehatBundle' => __DIR__.'/../vendor/bundles',
     ));
 
 Finally, tell the ``AppKernel``, to register the ``BehatBundle`` to the test environment.
@@ -729,14 +728,13 @@ After running the ``./bin/vendors install`` command line, we register the new na
 .. code-block:: php
 
     $loader->registerNamespaces(array(
-        // ..
-
+        // ...
         // previously added
-        'Behat\Gherkin' => __DIR__.'/../vendor/behat/gherkin/src',
-        'Behat\Behat' => __DIR__.'/../vendor/behat/behat/src',
-        'Behat\BehatBundle' => __DIR__.'/../vendor/bundles',
-        'Behat\Mink' => __DIR__.'/../vendor/behat/mink/src',
-        'Behat\MinkBundle' => __DIR__.'/../vendor/bundles',
+        'Behat\\Gherkin'     => __DIR__.'/../vendor/behat/gherkin/src',
+        'Behat\\Behat'       => __DIR__.'/../vendor/behat/behat/src',
+        'Behat\\BehatBundle' => __DIR__.'/../vendor/bundles',
+        'Behat\\Mink'        => __DIR__.'/../vendor/behat/mink/src',
+        'Behat\\MinkBundle'  => __DIR__.'/../vendor/bundles',
     ));
 
 The MinkBundle, like the BehatBundle will only be loaded in test environment in ``app/AppKernel.php``.
