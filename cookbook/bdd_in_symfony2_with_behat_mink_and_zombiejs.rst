@@ -106,6 +106,7 @@ Add those lines to the ``deps`` file.
     [behat]
         git=https://github.com/Behat/Behat.git
         target=/behat/behat
+        version=2.3.5
     
     [BehatBundle]
         git=https://github.com/Behat/BehatBundle.git
