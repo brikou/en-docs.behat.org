@@ -102,6 +102,7 @@ Add those lines to the ``deps`` file.
     [gherkin]
         git=https://github.com/Behat/Gherkin.git
         target=/behat/gherkin
+        version=v2.1.1
     
     [behat]
         git=https://github.com/Behat/Behat.git
