@@ -36,7 +36,7 @@ We create a folder where the project will live in and initialize a new git repos
 
 .. code-block:: bash
 
-    $ git init
+    git init
 
 Installing ``Symfony2``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,9 +45,10 @@ We are going to use the standard edition of Symfony2. The following steps will d
 
 .. code-block:: bash
 
-    $ wget http://symfony.com/download?v=Symfony_Standard_2.0.1.tgz
-    $ tar -xzf Symfony_Standard_2.0.1.tgz -s /^Symfony\//
-    $ rm Symfony_Standard_2.0.1.tgz
+    v=2.0.15
+    wget http://symfony.com/download?v=Symfony_Standard_$v.tgz
+    tar -xzf Symfony_Standard_$v.tgz -s /^Symfony\//
+    rm Symfony_Standard_$v.tgz
 
 Issuing the list command ``ls`` should result into this list:
 
@@ -59,7 +60,7 @@ Now we install the dependencies defined in the ``deps`` file for Symfony2 using 
 
 .. code-block:: bash
 
-    $ ./bin/vendors install
+    ./bin/vendors install
 
 Afterwards we setup the web server to point to the ``web/`` directory of our project.
 In addition we have to grant the web server access to the ``app/cache/`` and ``app/logs/`` directories.
@@ -82,7 +83,7 @@ As git won't add empty folders to the repository, but we want to have the cache 
 
 .. code-block:: bash
 
-    $ touch app/cache/.gitkeep app/logs/.gitkeep
+    touch app/cache/.gitkeep app/logs/.gitkeep
 
 So, this is our first commit. We have installed Symfony2!
 
