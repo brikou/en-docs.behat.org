@@ -147,7 +147,7 @@ Setting up ``Behat`` for the DemoBundle
 The standard edition of Symfony2 comes with the ``Acme\DemoBundle``. We will use this for our first tries.
 This makes it very easy, because we can now focus on setting up Behat and the following tools.
 
-By issuing ``php app/console -e=test behat --init @AcmeDemoBundle`` we are done!
+By issuing ``php app/console -e test behat --init @AcmeDemoBundle`` we are done!
 
 This command created the bundle's ``FeatureContext`` where everything regarding Behat will be defined, such as ``step definitions``.
 The newly created folder ``Features`` within the bundle will contain our feature definitions.
@@ -342,7 +342,7 @@ Afterwards, the feature context so far, will be this.
         }
     }
 
-Let's check, whether Behat recognizes our new definitions with ``php app/console behat -e=test @AcmeDemoBundle -dl``. The output should be.
+Let's check, whether Behat recognizes our new definitions with ``php app/console behat -e test @AcmeDemoBundle -dl``. The output should be.
 
 * ``Given /I have a category "([^"]*)"/``
 * ``Given /I have a product "([^"]*)"/``
@@ -455,7 +455,7 @@ After adding these, we will have this feature context:
         }
     }
 
-Issuing the test command ``php app/console behat -e=test @AcmeDemoBundle`` will result in every single scenario failing. This is ok for now, because we didn't set up anything!
+Issuing the test command ``php app/console behat -e test @AcmeDemoBundle`` will result in every single scenario failing. This is ok for now, because we didn't set up anything!
 
 Creating the model
 ~~~~~~~~~~~~~~~~~~
@@ -554,13 +554,13 @@ The complete section should read.
         orm:
             auto_mapping: true
 
-Issuing the database:create task ``php app/console doctrine:database:create -e=test`` will result in.
+Issuing the database:create task ``php app/console doctrine:database:create -e test`` will result in.
 
 ::
 
     Created database for connection named symfony_test
 
-Now, we create the defined schema in this database by issuing ``php app/console doctrine:schema:create -e=test``.
+Now, we create the defined schema in this database by issuing ``php app/console doctrine:schema:create -e test``.
 
 ::
 
@@ -573,7 +573,7 @@ Backgrounds
 ~~~~~~~~~~~
 
 Now, that we have our model set up and have created a database, we are good to go!
-By issuing ``php app/console behat -e=test @AcmeDemoBundle``, we will see that everything should be working?
+By issuing ``php app/console behat -e test @AcmeDemoBundle``, we will see that everything should be working?
 
 ::
 
@@ -786,7 +786,7 @@ Now it's time to define our acceptance to the web application, we are going to c
 Those are the requirements for the new ``CatalogController`` to be created in ``src/Acme/DemoBundle/Controller/CatalogController.php``.
 
 Now, we will re-write them into a feature file describing the behaviors of the interface.
-At first, let's take a look into available definitions ``php app/console behat -e=test @AcmeDemoBundle -dl``.
+At first, let's take a look into available definitions ``php app/console behat -e test @AcmeDemoBundle -dl``.
 There are some more now, because we are now using the MinkContext. This context provides definitions for navigating a web page.
 
 The feature definition may look like this one in ``src/Acme/DemoBundle/Features/CatalogNavigation.feature``.
@@ -1018,7 +1018,7 @@ Now that we have the new route and its content available, we can link the catego
 
     <li><a href="{{ path('_catalog_category_content', {'name': category.name}) }}">{{ category.name }}</a></li>
 
-By issuing the test again ``php app/console behat -e=test @AcmeDemoBundle``, we now can see, **we are done**!
+By issuing the test again ``php app/console behat -e test @AcmeDemoBundle``, we now can see, **we are done**!
 Everything a stakeholder gave us in its feature definitions is fulfilled and working correctly.
 
 
